@@ -1,4 +1,4 @@
-# SENTIMENT ANALYSIS OF TWITTER USING PYTHON
+##### SENTIMENT ANALYSIS OF TWITTER USING PYTHON
 
 # APP
 https://share.streamlit.io/mrshubham1267/sentiment_analysis_of_tweeter_project/main/app.py
