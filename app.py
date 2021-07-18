@@ -1,24 +1,29 @@
-
+#IMPORT PACKAGES
 import streamlit as st
+import numpy as np
+import pandas as pd
 import tweepy
+import re
+import emoji
+import matplotlib.pyplot as plt
+import seaborn as sns
 from textblob import TextBlob
 from wordcloud import WordCloud
-import pandas as pd
-import numpy as np
-import re
-import matplotlib.pyplot as plt
 from PIL import Image
-import seaborn as sns
 
 
+#TO ACCESS TWEETER API
+
+#All 4 authentication keys to access twitter API to connect as OAth handler or jump server / revers proxy server
 
 consumerKey = "ZSTjRgpSwrcpgLDqTug1tnHVS"
 consumerSecret = "2mfFBHGIV0OT7b5LbgWrAbBhoyr3tB7GiGTtCGiz0pN8S9EFKv"
 
+#From proxy server we need to connect
+
 accessToken = "1014097837381111808-1ZmyTn9NwXhnlnH3rLJdjLg7WmwFTG"
 accessTokenSecret = "siiC7b529NpcGT8uwopjOaauSRZoUQdlN38mLL0gX2TLK"
   
-
 
 #Create the authentication object
 authenticate = tweepy.OAuthHandler(consumerKey, consumerSecret) 
@@ -28,7 +33,6 @@ authenticate.set_access_token(accessToken, accessTokenSecret)
     
 # Creating the API object while passing in auth information
 api = tweepy.API(authenticate, wait_on_rate_limit = True)
-
 
 
 #plt.style.use('fivethirtyeight')
@@ -55,16 +59,10 @@ def app():
 		st.write("1. Fetches the 5 most recent tweets from the given twitter handel")
 		st.write("2. Generates a Word Cloud")
 		st.write("3. Performs Sentiment Analysis a displays it in form of a Bar Graph")
-
-
-		
-
-
+	
 		raw_text = st.text_area("Enter the exact twitter handle of the Personality (without @)")
 
-
-
-		st.markdown("<--------     Also Do checkout the another cool tool from the sidebar")
+		st.markdown("You can Do checkout the another tool from the sidebar")
 
 		Analyzer_choice = st.selectbox("Select the Activities",  ["Show Recent Tweets","Generate WordCloud" ,"Visualize the Sentiment Analysis"])
 
@@ -74,7 +72,10 @@ def app():
 			
 			if Analyzer_choice == "Show Recent Tweets":
 
+
+				st.title('💫Tweets💫')
 				st.success("Fetching last 5 Tweets")
+
 
 				
 				def Show_Recent_Tweets(raw_text):
@@ -103,6 +104,7 @@ def app():
 
 			elif Analyzer_choice=="Generate WordCloud":
 
+				st.title('📃WordCloud📃')
 				st.success("Generating Word Cloud")
 
 				def gen_wordcloud():
@@ -125,24 +127,17 @@ def app():
 
 				st.image(img)
 
-
-
 			else:
-
-
-
-				
+			
 				def Plot_Analysis():
 
+					st.title('📊Visualisation📊')
 					st.success("Generating Visualisation for Sentiment Analysis")
 
 					
-
-
 					posts = api.user_timeline(screen_name=raw_text, count = 100, lang ="en", tweet_mode="extended")
 
 					df = pd.DataFrame([tweet.full_text for tweet in posts], columns=['Tweets'])
-
 
 					
 					# Create a function to clean the tweets
@@ -153,7 +148,6 @@ def app():
 					 text = re.sub('https?:\/\/\S+', '', text) # Removing hyperlink
 					 
 					 return text
-
 
 					# Clean the tweets
 					df['Tweets'] = df['Tweets'].apply(cleanTxt)
@@ -174,31 +168,22 @@ def app():
 
 					def getAnalysis(score):
 					  if score < 0:
-					    return 'Negative'
+					    return '😞Negative'
 					  elif score == 0:
-					    return 'Neutral'
+					    return '😐Neutral'
 					  else:
-					    return 'Positive'
+					    return '😊Positive'
 					    
 					df['Analysis'] = df['Polarity'].apply(getAnalysis)
 
-
 					return df
-
-
 
 				df= Plot_Analysis()
 
-
-
 				st.write(sns.countplot(x=df["Analysis"],data=df))
-
 
 				st.pyplot(use_container_width=True)
 				
-
-	
-
 	else:
 
 		st.subheader("This tool fetches the last 100 tweets from the twitter handel & Performs the following tasks")
@@ -208,9 +193,6 @@ def app():
 		st.write("3. Analyzes Subjectivity of tweets and adds an additional column for it")
 		st.write("4. Analyzes Polarity of tweets and adds an additional column for it")
 		st.write("5. Analyzes Sentiments of tweets and adds an additional column for it")
-
-
-
 
 
 
@@ -249,16 +231,15 @@ def app():
 
 			def getAnalysis(score):
 				if score < 0:
-					return 'Negative'
+					return '😞Negative'
 
 				elif score == 0:
-					return 'Neutral'
+					return '😐Neutral'
 
 
 				else:
-					return 'Positive'
+					return '😊Positive'
 
-		
 						    
 			df['Analysis'] = df['Polarity'].apply(getAnalysis)
 			return df
@@ -270,8 +251,6 @@ def app():
 			df=get_data(user_name)
 
 			st.write(df)
-
-
 
 
 if __name__ == "__main__":
