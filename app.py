@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import tweepy
 import re
-import emoji
 import matplotlib.pyplot as plt
 import seaborn as sns
 from textblob import TextBlob
