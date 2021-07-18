@@ -18,7 +18,7 @@ Sentiment analysis refers to identifying as well as classifying the sentiments t
 * tweepy
 * textblob
 * re
-* 
+
 
 ## :gear: Setup
  Install :-
