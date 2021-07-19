@@ -18,8 +18,11 @@ This tool performs the following tasks :
 2.This tool fetches the last 100 tweets from the twitter handel & Performs the following tasks Converts it into a DataFrame
 
 Cleans the text
+
 1.Analyzes Subjectivity of tweets and adds an additional column for it
+
 2.Analyzes Polarity of tweets and adds an additional column for it
+
 3.Analyzes Sentiments of tweets and adds an additional column for it
 
 This respository contains all the files for end to end model building and deployment of tweet analyzer web app
