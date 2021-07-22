@@ -29,7 +29,7 @@ Cleans the text
 
 3.Analyzes Sentiments of tweets and adds an additional column for it
 
-This respository contains all the files for end to end model building and deployment of tweet analyzer web app
+### This respository contains all the files for end to end model building and deployment of tweet analyzer web app
 
 ## :desktop_computer:	Installation
 
