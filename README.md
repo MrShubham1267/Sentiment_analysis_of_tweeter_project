@@ -7,9 +7,9 @@ https://share.streamlit.io/mrshubham1267/sentiment_analysis_of_tweeter_project/m
 Sentiment analysis refers to identifying as well as classifying the sentiments that are expressed in the text source. Tweets are often useful in generating a vast amount of sentiment data upon analysis. These data are useful in understanding the opinion of the people about a variety of topics
 
 ### 🎯 Task
-##### Analyze the tweets of your favourite Personalities
+#### Analyze the tweets of your favourite Personalities
 
-This tool performs the following tasks :
+#### This tool performs the following tasks :
 
 1.Fetches the 5 most recent tweets from the given twitter handel
 
@@ -19,9 +19,9 @@ This tool performs the following tasks :
 
 
 
-##### This tool fetches the last 100 tweets from the twitter handel & Performs the following tasks Converts it into a DataFrame
+#### This tool fetches the last 100 tweets from the twitter handel & Performs the following tasks Converts it into a DataFrame
 
-Cleans the text
+##### Cleans the text
 
 1.Analyzes Subjectivity of tweets and adds an additional column for it
 
