@@ -9,7 +9,7 @@ Sentiment analysis refers to identifying as well as classifying the sentiments t
 ## 🎯 Task
 1.Analyze the tweets of your favourite Personalities
 
-This tool performs the following tasks :
+##### This tool performs the following tasks :
 
 1.Fetches the 5 most recent tweets from the given twitter handel
 
@@ -17,7 +17,9 @@ This tool performs the following tasks :
 
 3.Performs Sentiment Analysis a displays it in form of a Bar Graph
 
-2.This tool fetches the last 100 tweets from the twitter handel & Performs the following tasks Converts it into a DataFrame
+
+
+##### This tool fetches the last 100 tweets from the twitter handel & Performs the following tasks Converts it into a DataFrame
 
 Cleans the text
 
