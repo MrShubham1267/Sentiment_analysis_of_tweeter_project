@@ -38,6 +38,7 @@ This respository contains all the files for end to end model building and deploy
 * wordcloud
 * tweepy
 * textblob
+* streamlit
 * re
 
 ## :gear: Setup
@@ -72,5 +73,10 @@ This respository contains all the files for end to end model building and deploy
 ```
 ```bash
 ! pip install textblob
+
+```
+
+```bash
+! pip install streamlit
 
 ```
