@@ -12,7 +12,9 @@ Sentiment analysis refers to identifying as well as classifying the sentiments t
 This tool performs the following tasks :
 
 1.Fetches the 5 most recent tweets from the given twitter handel
+
 2.Generates a Word Cloud
+
 3.Performs Sentiment Analysis a displays it in form of a Bar Graph
 
 2.This tool fetches the last 100 tweets from the twitter handel & Performs the following tasks Converts it into a DataFrame
